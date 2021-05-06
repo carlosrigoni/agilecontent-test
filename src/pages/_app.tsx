@@ -1,6 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
 
+import GlobalStyle from '../styles/GlobalStyle';
+import { ThemeProvider } from 'styled-components';
+
+import dark from '../styles/themes/dark';
+
 function MyApp({ Component, pageProps }) {
   return (
     <>
@@ -11,7 +16,11 @@ function MyApp({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
-      <Component {...pageProps} />;
+
+      <ThemeProvider theme={dark}>
+        <GlobalStyle />
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   );
 }
