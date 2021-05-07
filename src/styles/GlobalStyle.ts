@@ -29,8 +29,6 @@ export default createGlobalStyle`
   body {
   background: ${(props) => props.theme.colors.backgroundPrimary};
   color: ${(props) => props.theme.colors.text};
-  max-width: 768px;
-  margin: auto;
   }
 
   body,
