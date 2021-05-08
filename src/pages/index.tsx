@@ -2,8 +2,10 @@ import React from 'react';
 import Head from 'next/head';
 
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 import { Background } from '../styles/pages/Home';
+import Main from '../components/Main';
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
 
       <Background />
       <Header />
+      {/* <Main /> */}
+      <Footer />
     </>
   );
 }

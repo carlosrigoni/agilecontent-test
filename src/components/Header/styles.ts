@@ -6,7 +6,7 @@ export const Container = styled.div`
   flex-direction: row;
   justify-content: space-between;
 
-  padding: 35px 77px 44px 83px;
+  padding: 35px 77px 0 83px;
 
   div {
     display: flex;
@@ -28,4 +28,10 @@ export const Subtitle = styled(Image)`
 export const CloseIcon = styled(Image)`
   opacity: 0.6;
   object-fit: contain;
+
+  cursor: pointer;
+
+  :hover {
+    opacity: 1;
+  }
 `;
