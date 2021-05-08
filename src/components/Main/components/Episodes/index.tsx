@@ -2,9 +2,16 @@ import React, { useCallback, useState } from 'react';
 
 import Details from './components/Details';
 
+import { IEpisode } from '../..';
+
+interface EpisodesProps {
+  season: number;
+  episodes: IEpisode[];
+}
+
 import { Container, Episode } from './styles';
 
-export default function Episodes() {
+export default function Episodes({ episodes, season }: EpisodesProps) {
   const [selected, setSelected] = useState('');
 
   const handleSelect = useCallback(
@@ -19,23 +26,32 @@ export default function Episodes() {
     [setSelected]
   );
 
-  const array = [{ ID: '1' }, { ID: '2' }, { ID: '3' }, { ID: '4' }];
-
   return (
     <Container>
-      {array.map((item, index) => (
-        <Episode onClick={() => handleSelect(item.ID)}>
-          <div key={index}>
+      {episodes.map((episode) => {
+        if (episode === null || episode.SeasonNumber !== season) {
+          return;
+        }
+        return (
+          <Episode key={episode.ID} onClick={() => handleSelect(episode.ID)}>
             <div>
-              <span>{index + 1}</span>
-              <p>Nice work</p>
-            </div>
+              <div>
+                <span>{episode.EpisodeNumber}</span>
+                <p>{episode.Title}</p>
+              </div>
 
-            <img src="/assets/play-small-player-w.svg" />
-          </div>
-          {item.ID === selected && <Details />}
-        </Episode>
-      ))}
+              <img src="/assets/play-small-player-w.svg" />
+            </div>
+            {episode.ID === selected && (
+              <Details
+                Image={episode.Image}
+                Synopsis={episode.Synopsis}
+                Duration={episode.Duration}
+              />
+            )}
+          </Episode>
+        );
+      })}
     </Container>
   );
 }

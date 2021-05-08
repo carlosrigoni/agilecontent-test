@@ -1,13 +1,19 @@
 import React from 'react';
 import Head from 'next/head';
+import { GetStaticProps } from 'next';
 
 import Header from '../components/Header';
+import Main, { IEpisode } from '../components/Main';
 import Footer from '../components/Footer';
 
 import { Background } from '../styles/pages/Home';
-import Main from '../components/Main';
 
-export default function Home() {
+interface HomeProps {
+  episodes: IEpisode[];
+  tvShow: string;
+}
+
+export default function Home({ episodes }: HomeProps) {
   return (
     <>
       <Head>
@@ -18,8 +24,27 @@ export default function Home() {
 
       <Background />
       <Header />
-      <Main />
+      <Main episodes={episodes} />
       <Footer />
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps<HomeProps> = async (context) => {
+  const episodesResponse = await fetch(
+    'https://sample-api-78c77.firebaseio.com/episodes/SHOW123.json'
+  );
+  const tvShowResponse = await fetch(
+    'https://sample-api-78c77.firebaseio.com/tv-shows/SHOW123.json'
+  );
+
+  const episodes = await episodesResponse.json();
+  const tvShow = await tvShowResponse.json();
+
+  return {
+    props: {
+      episodes,
+      tvShow,
+    },
+  };
+};

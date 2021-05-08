@@ -38,4 +38,5 @@ export const Container = styled.div`
 export const Episode = styled.li`
   list-style: none;
   border-bottom: 1px solid #5555;
+  cursor: pointer;
 `;
