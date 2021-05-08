@@ -1,3 +1,5 @@
+To run this project follow the steps below
+
 First, install the dependencies:
 
 ```bash
