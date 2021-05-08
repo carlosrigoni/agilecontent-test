@@ -10,10 +10,32 @@ import { Background } from '../styles/pages/Home';
 
 interface HomeProps {
   episodes: IEpisode[];
-  tvShow: string;
+  tvShow: ITvShow;
 }
 
-export default function Home({ episodes }: HomeProps) {
+export interface ICast {
+  ID: string;
+  Name: string;
+}
+
+export interface IGenres {
+  ID: string;
+  Title: string;
+}
+
+export interface ITvShow {
+  ID: string;
+  Title: string;
+  Synopsis: string;
+  Year: number;
+  Images: {
+    Background: string;
+  };
+  Genres: IGenres[];
+  Cast: ICast[];
+}
+
+export default function Home({ episodes, tvShow }: HomeProps) {
   return (
     <>
       <Head>
@@ -22,10 +44,10 @@ export default function Home({ episodes }: HomeProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Background />
-      <Header />
+      <Background url={tvShow.Images.Background} />
+      <Header title={tvShow.Title} genres={tvShow.Genres} year={tvShow.Year} />
       <Main episodes={episodes} />
-      <Footer />
+      <Footer cast={tvShow.Cast} synopsis={tvShow.Synopsis} />
     </>
   );
 }

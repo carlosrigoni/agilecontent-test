@@ -9,11 +9,15 @@ import SwiperCore, { Pagination, Navigation } from 'swiper/core';
 
 SwiperCore.use([Pagination, Navigation]);
 
+import { ICast } from '../../../../pages';
+
 import { Container, Slider, Card } from './styles';
 
-export default function App() {
-  const array = [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13];
+interface CastProps {
+  cast: ICast[];
+}
 
+export default function Cast({ cast }: CastProps) {
   return (
     <Container>
       <Swiper
@@ -21,21 +25,21 @@ export default function App() {
           '--swiper-navigation-color': '#5A5A5A',
           marginLeft: 25,
           marginRight: 25,
-          paddingLeft: 50,
-          paddingRight: 50,
+          paddingLeft: 80,
+          paddingRight: 80,
         }}
-        slidesPerView={6}
-        spaceBetween={50}
+        slidesPerView={4}
+        spaceBetween={20}
         loop={true}
         navigation={true}
         className="mySwiper"
       >
         <Slider>
-          {array.map((x) => (
-            <SwiperSlide key={x}>
+          {cast.map((item) => (
+            <SwiperSlide key={item.ID}>
               <Card>
-                <strong>Matt Demon</strong>
-                <p>Mark Watney</p>
+                <strong>{item.Name}</strong>
+                <p>{item.Name}</p>
               </Card>
             </SwiperSlide>
           ))}

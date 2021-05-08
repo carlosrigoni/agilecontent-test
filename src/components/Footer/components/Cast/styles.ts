@@ -7,7 +7,9 @@ export const Container = styled.div`
   flex-direction: row;
 `;
 
-export const Slider = styled.div``;
+export const Slider = styled.div`
+  width: 100%;
+`;
 
 export const Card = styled.div`
   background: #1a1a1a;

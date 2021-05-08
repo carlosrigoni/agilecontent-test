@@ -8,7 +8,11 @@ import {
   InteractionIcon,
 } from './styles';
 
-export default function General() {
+interface GeneralProps {
+  synopsis: string;
+}
+
+export default function General({ synopsis }: GeneralProps) {
   return (
     <Container>
       <Interactions>
@@ -51,13 +55,7 @@ export default function General() {
 
       <Synopsis>
         <strong>SINOPSE</strong>
-        <p>
-          Durante una mission a Marte de la nave tripulada Ares III, una fuerte
-          tormenta se desata. por lo que. tras haber dado por desaparecido y
-          muerto al astranauta Mark Watney (Matt Damon). sus companeiros toman
-          la decision de irse. sin embargo. ha sobrevivido. pero esta solo y sin
-          apenas recursos en
-        </p>
+        <p>{synopsis}</p>
       </Synopsis>
     </Container>
   );

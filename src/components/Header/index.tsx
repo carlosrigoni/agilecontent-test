@@ -1,12 +1,19 @@
 import React from 'react';
+import { IGenres } from '../../pages';
 
-import { Container, Subtitle, CloseIcon, Title } from './styles';
+import { Container, Subtitle, CloseIcon } from './styles';
 
-export default function Header() {
+interface HeaderProps {
+  title: string;
+  genres: IGenres[];
+  year: number;
+}
+
+export default function Header({ title, genres, year }: HeaderProps) {
   return (
     <Container>
       <div>
-        <Title src="/assets/penny-dreadful.svg" width={462} height={69} />
+        <h1>{title}</h1>
         <Subtitle src="/assets/cienc.svg" width={592} height={24} />
       </div>
 
