@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Swiper } from 'swiper/react';
 
 export const Container = styled.div`
   margin-top: 20px;
@@ -23,4 +24,12 @@ export const Card = styled.div`
   p {
     color: #777;
   }
+`;
+
+export const SwiperContainer = styled(Swiper)`
+  --swiper-navigation-color: #5a5a5a;
+  margin-left: 25;
+  margin-right: 25;
+  padding-left: 80;
+  padding-right: 80;
 `;

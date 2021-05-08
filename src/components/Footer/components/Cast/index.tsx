@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { SwiperSlide } from 'swiper/react';
 
 import 'swiper/swiper.min.css';
 import 'swiper/components/pagination/pagination.min.css';
@@ -11,7 +11,7 @@ SwiperCore.use([Pagination, Navigation]);
 
 import { ICast } from '../../../../pages';
 
-import { Container, Slider, Card } from './styles';
+import { Container, Slider, Card, SwiperContainer } from './styles';
 
 interface CastProps {
   cast: ICast[];
@@ -20,13 +20,7 @@ interface CastProps {
 export default function Cast({ cast }: CastProps) {
   return (
     <Container>
-      <Swiper
-        style={{
-          marginLeft: 25,
-          marginRight: 25,
-          paddingLeft: 80,
-          paddingRight: 80,
-        }}
+      <SwiperContainer
         slidesPerView={4}
         spaceBetween={20}
         loop={true}
@@ -43,7 +37,7 @@ export default function Cast({ cast }: CastProps) {
             </SwiperSlide>
           ))}
         </Slider>
-      </Swiper>
+      </SwiperContainer>
     </Container>
   );
 }
