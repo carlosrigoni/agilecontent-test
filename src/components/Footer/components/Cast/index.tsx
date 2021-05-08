@@ -22,7 +22,6 @@ export default function Cast({ cast }: CastProps) {
     <Container>
       <Swiper
         style={{
-          '--swiper-navigation-color': '#5A5A5A',
           marginLeft: 25,
           marginRight: 25,
           paddingLeft: 80,
