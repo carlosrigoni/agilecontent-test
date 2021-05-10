@@ -18,4 +18,8 @@ export const ImagePreview = styled.img`
   width: 90% !important;
   height: 100% !important;
   object-fit: cover;
+
+  @media (max-width: 550px) {
+    width: 100% !important;
+  }
 `;
