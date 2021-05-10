@@ -12,6 +12,12 @@ export const DetailsContainer = styled.div`
     font-size: 0.8rem;
     font-weight: 400;
   }
+
+  @media (max-width: 550px) {
+    p {
+      width: 100%;
+    }
+  }
 `;
 
 export const ImagePreview = styled.img`
