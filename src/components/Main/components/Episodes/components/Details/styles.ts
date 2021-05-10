@@ -6,6 +6,17 @@ export const DetailsContainer = styled.div`
   flex-direction: column !important;
   align-items: flex-start !important;
 
+  animation: MoveUpDown 0.2s linear;
+
+  @keyframes MoveUpDown {
+    0% {
+      transform: scaleY(0);
+    }
+    100% {
+      transform: scaleY(1);
+    }
+  }
+
   p {
     width: 367px;
     margin: 10px 0;
