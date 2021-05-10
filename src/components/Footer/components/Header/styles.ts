@@ -8,12 +8,19 @@ interface IOption {
 export const Container = styled.div`
   display: flex;
   align-items: center;
+  flex-direction: row-reverse;
   justify-content: space-between;
 
   width: 90%;
   margin: auto;
   margin-top: 30px;
   border-bottom: 2px solid #2a2b2d;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 25px 0;
+  }
 `;
 
 export const Options = styled.div`
@@ -22,6 +29,10 @@ export const Options = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 45%;
+
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 `;
 
 export const Option = styled.p<IOption>`
@@ -34,6 +45,14 @@ export const Option = styled.p<IOption>`
 
   :hover {
     color: ${(props) => props.theme.colors.text};
+  }
+
+  @media (max-width: 1300px) {
+    margin-right: 20px !important;
+  }
+
+  @media (max-width: 500px) {
+    margin-top: 20px !important;
   }
 `;
 

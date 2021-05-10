@@ -7,9 +7,15 @@ interface IOption {
 export const Container = styled.div`
   display: flex;
   flex-direction: row;
-  width: 24%;
+  width: 450px;
 
   border-bottom: 2px solid #2a2b2d;
+
+  @media (max-width: 600px) {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 5px;
+  }
 `;
 
 export const Option = styled.p<IOption>`

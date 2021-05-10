@@ -6,7 +6,7 @@ export const Container = styled.div`
 
   display: flex;
   flex-direction: column;
-  width: 25%;
+  width: 450px;
   justify-content: flex-start;
 
   div {
@@ -32,6 +32,12 @@ export const Container = styled.div`
 
   ::-webkit-scrollbar {
     display: none;
+  }
+
+  @media (max-width: 600px) {
+    width: 91%;
+    margin: auto;
+    margin-top: 0;
   }
 `;
 

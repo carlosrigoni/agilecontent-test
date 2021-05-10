@@ -8,6 +8,11 @@ export const Container = styled.div`
 
   display: flex;
   flex-direction: row;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
 `;
 
 export const Interactions = styled.div`
@@ -34,4 +39,8 @@ export const Synopsis = styled.div`
   opacity: 0.8;
   color: ${(props) => props.theme.colors.textSecondary};
   width: 70%;
+
+  @media (max-width: 900px) {
+    width: 100%;
+  }
 `;

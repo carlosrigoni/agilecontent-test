@@ -10,6 +10,8 @@ interface HeaderProps {
 export default function Header({ selected, setSelected }: HeaderProps) {
   return (
     <Container>
+      <TelecineIcon src="/assets/logo-telecine.svg" width={49} height={30} />
+
       <Options>
         <Option
           onClick={() => setSelected('general')}
@@ -25,7 +27,6 @@ export default function Header({ selected, setSelected }: HeaderProps) {
         </Option>
         <Option selected={false}>PRINCIPALES PREMIOS</Option>
       </Options>
-      <TelecineIcon src="/assets/logo-telecine.svg" width={49} height={30} />
     </Container>
   );
 }
